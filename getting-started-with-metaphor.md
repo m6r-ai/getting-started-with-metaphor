@@ -1,6 +1,6 @@
 # Getting started with Metaphor
 
-Prompting AIs to do what you want is hard.
+Prompting AIs can be hard.
 While they sometimes do exactly what you want, they often get it wrong.
 Even when you do get what you want, it's far too easy to lose track of what what worked and why.
 It's even harder when you want to work with multiple AIs.
@@ -21,17 +21,17 @@ This guide will show you how.
 ## How is Metaphor used?
 
 Metaphor is designed to be used at the start of a new conversation with an AI large language model (LLM).
-It sets the scene for the LLM, ensuring it knows how we want it behave, what we want it to do, and allows you to
+It sets the scene for the LLM, ensuring it knows how you want it behave, what you want it to do, and allows you to
 tell it everything it needs to know to do that.
 
 You might ask "AIs know almost everything - why do I need to do this?"
 The answer is surprisingly simple.
-AI models know a huge amount but they have no idea what we're trying achieve or how we want them to help us unless
-we tell them.
+AI models know a huge amount but they have no idea what you're trying achieve or how you want them to help us unless
+you tell them.
 
 One way to think about this is if you want to ask another human how to do something, you have to explain these things
 to them.
 AIs are no different.
 Unlike most people, however, LLMs don't remember what you've said to them before.
-Fortunately, they are incredibly fast at reading so they can get up to speed in a few seconds if we give
+Fortunately, they are incredibly fast at reading so they can get up to speed in a few seconds if you give
 them the full picture at the start of each new conversation.
