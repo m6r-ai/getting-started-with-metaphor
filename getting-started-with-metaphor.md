@@ -325,7 +325,7 @@ By being more precise, the Metaphor prompt helps make sure any resuling software
 ### Comments
 
 Sometimes it's useful to make notes in a Metaphor prompt that won't be passed to the AI.
-These are comments for the benefit of anyone who might want to understand, re-use, or update the prompt.
+These are comments for the benefit of anyone who might want to understand, reuse, or update the prompt.
 
 In Metaphor, comments start with a `#` symbol.
 Everything after that symbol on the same line is completely ignored by `m6rc`.
@@ -395,7 +395,7 @@ As an example, the following is not valid in Metaphor:
         Here's some more text.  The compiler will generate an error if we try to do this.
 ```
 
-### Embedding content
+## Embedding content
 
 The Metaphor syntax you've seen so far is quite limited as it's just simple text.
 For many problems, and almost all software development work, you need to give your AI other information.
@@ -446,9 +446,81 @@ For example, the following statement will embed all the Python files in a folder
     Embed: src/m6rc/*.py
 ```
 
+## Including other Metaphor files
+
+The `Embed` keyword is a powerful way to add content to a `Context` block, but it really just attaches files to
+the prompt.
+It doesn't allow for extending Metaphor descriptions.
+
+There are many reasons you might want to do this, but here are a few:
+
+- You might want to reuse them same Metaphor elements in multiple prompts.
+  E.g. you might want to use the same coding rules in all your projects.
+- Some parts of a Metaphor prompt might come from different people or teams.
+  E.g. some parts might come from product managers, or security experts, while others come from software developers.
+- You may wish to use the same context information for different purposes.
+  E.g. you may wish to have the AI offer advice as a product manager instead of as a developer, or you may want to have
+  an action that asks the AI to review the context instead of using it to do something using it.
+
+To solve this type of problem, Metaphor has an `Include` keyword.
+
+`Include` statements have a file name that follows the `:` and the `m6rc` compiler inserts that file where the
+`Include` statement is.
+The compiler automatically adds indentation to each included line to ensure the document-like structure of the prompt
+is maintained.
+
+If you wanted to split our last example, here's how you could do it!
+First split out the Python rules into a new file, called `python-rules.m6r`:
+
+```metaphor
+# Ensure the AI follows our coding standards.
+Context: Python implementation rules
+    As an engineer working with the application, I want the application to be easy to use and understand,
+    so I can maintain and enhance it over time.
+
+    Context: Implement in Python 3
+        The application will be written in the latest version of Python 3.  Assume a baseline of Python 3.10.
+
+    Context: Indentation of code
+        Code must be indented by 4 spaces.
+
+    Context: Use docstrings
+        Docstrings must be used to describe all modules, classes, and functions.  This should follow PEP 257 guidelines.
+
+    Context: Use type hints
+        Type hints must be used for function arguments and return values.
+
+    Context: Use comments
+        Comments must be used to describe any complex logic, or rationale that would not be obvious from
+        simply reading the code.  This ensures that anyone reading the code for the first time will be able
+        to understand why the code is the way it is.
+
+    Context: PEP 8 imports
+        The import list in any module should follow PEP 8 guidelines, including the ordering of imports.
+```
+
+Then include those rules in your `Hello.m6r` file:
+
+```metaphor
+Role:
+    # We want the AI to be a world-class programmer so it does it's best work.  We don't want it to act like a novice.
+    You are a world-class python programmer.
+
+Context:
+    I need a simple program to demonstrate using the Metaphor language to solve a programming problem.
+
+    Include: metaphor/python-rules.m6r
+
+Action:
+    # Ask the AI to do exactly one thing.
+    Build me a "hello world" program.
+```
+
+Now you have a set of reusable rules.
+You can also use `Include` inside other files that you include to encourage modularity and reusability.
+
 ## To Do:
 
-- syntax
 - iterating to a solution
 - getting started from nothing
 - interactions with other people are easier.
