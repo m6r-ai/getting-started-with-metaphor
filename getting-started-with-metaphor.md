@@ -374,6 +374,55 @@ Humbug's syntax highlighting makes this all a little easier to read!
 
 ![Updated hello world metaphor file](img/updated-m6r.webp)
 
+There are a couple of important rules to note here:
+
+- Text descriptions are indented by 4 spaces from the `Context` keyword that starts the sub-section.
+  This gives a strong visual cue about the relationship between different sub-sections.
+- Text descriptions must come immediately after the `Context` keyword.
+  It's possible to add multiple paragraphs, but once a new `Context` subsection is started it's no longer
+  possible to add more description text afterwards.
+
+As an example, the following is not valid in Metaphor:
+
+```metaphor
+    Context: Python implementation rules
+        As an engineer working with the application, I want the application to be easy to use and understand,
+        so I can maintain and enhance it over time.
+
+        Context: Implement in Python 3
+            The application will be written in the latest version of Python 3.  Assume a baseline of Python 3.10.
+
+        Here's some more text.  The compiler will generate an error if we try to do this.
+```
+
+### Embedding content
+
+The Metaphor syntax you've seen so far is quite limited as it's just simple text.
+For many problems, and almost all software development work, you need to give your AI other information.
+
+One way to do this is to use three backticks to introduce structured information.
+This is very similar to Markdown and is very useful for introducing things like document or source code snippets.
+
+For example, you can insert a segment of Python source code into a `Context` block like this:
+
+```metaphor
+    Context: Existing code
+
+        The following function implements path validation:
+
+        \`\`\`python
+        def validate_include_paths(paths: List[str]) -> Optional[str]:
+            if not paths:
+                return None
+
+            for path in paths:
+                if not os.path.isdir(path):
+                    return f"Not a valid directory: {path}"
+
+            return None
+        \`\`\`
+```
+
 ## To Do:
 
 - syntax
