@@ -1,5 +1,9 @@
 # Getting started with Metaphor
 
+Version 0.1 - 2025-04-30
+
+## Introduction
+
 Prompting AIs can be hard.
 While they sometimes do exactly what you want, they often get it wrong.
 Even when you do get what you want, it's far too easy to lose track of what what worked and why.
@@ -520,14 +524,74 @@ Now you have a set of reusable rules.
 
 You can also use `Include` inside other files that you include to encourage modularity and reusability.
 
-## Closing thoughts
+## More on roles and actions
 
-You've now seen how to get started with Metaphor (and Humbug).
-It's very effective at communicating what you want to your AI.
+The keywords `Role` and `Action` are singular for a reason!
 
-What you might want to think about is the potential impact it can have on your human peers.
+Your AI can't try to fulfil two different roles, so don't try to confuse it by asking it to take on more
+than one role in a prompt.
+If you need two roles to be played, then that's two prompts.
 
-By being very explicit about needs and requirements for your LLMs, you've probably also started to structure things
-in a way that will make them much easier for your peers to understand too.
+Likewise, if you ask your AI to do more than one thing at a time, then just like most people, it's unlikely to
+do any of them the way you want.  Instead think about how to break down the things you want into steps that
+can be done in sequence.
 
-The clarity you've brought for your AIs is exactly the sort of clarity you need elsewhere!
+Some reasoning/thinking AI models can attempt to break things down automatically but the danger is they get
+some intermediate step wrong and the end result isn't what you want.
+
+You can still have your AI help you break problems down, just make this an explicit part of the process.
+You can ask an LLM to give you a plan to review and then use that as the basis of a series of steps.
+It won't remember the plan unless you tell it, so don't forget to capture the details in the follow-on Metaphor prompts.
+
+It's also worth remembering that Humbug doesn't automatically submit a prompt when you start a Metaphor conversation.
+Another reason for this is so you can use the same base Metaphor prompt but make small changes manually.
+If you have a 5 step plan you can create a prompt that includes all 5 steps and then just tell it which step to start
+from each time you use the prompt.
+
+## Building up the structure
+
+You've now got a clearer understanding of how Metaphor works, but it can be pretty daunting to start with an almost
+empty Metaphor file and try to do something.  Metaphor can help you with this too.
+
+If you imagine starting with just one or two bullet points in the `Context` and an `Action` that says something like:
+
+```metaphor
+Action:
+    Please review the requirements and tell me what's unclear, confusing, or ambiguous.
+```
+
+When you compiler and use this prompt, you're essentially asking your LLM to help you fill in the missing parts.
+If it knows 10 ways to do something, this is where it can help you narrow it down to the one you want.
+If it doesn't understand some part of what you're trying to achieve, this is where it can ask you to clarify.
+
+These sorts of meta-conversations are incredibly powerful because they help us to get the AI to ask questions.
+Humans do this naturally, but LLMs need nudging.
+
+If you reach a consensus on what you want in some area, you can also ask the AI to write up some new elements for
+the `Context` section.
+Once you have enough new context then you can start the process again, but this time starting from the newly expanded
+Metaphor prompt.
+
+The ability to iterate towards a well-structured prompt is one of the great strengths of the Metaphor model because
+it allows you to have one or more AIs assist you in assisting them!
+
+## One last thing...
+
+You've now seen how to get started with Metaphor (and Humbug) and how it can be very effective at communicating
+your needs to an AI.
+
+In sofware development, the norm is to store earlier versions in a revision control system so you can evaluate
+earlier versions of the code and see how it evolves.
+Metaphor now lets you do the same thing with the prompts that help you use with your AI too.
+If you capture the resulting conversations, you get a thorough audit trail of your AI-assisted work too.
+
+These are all key elements of improving quality and repeatability.
+They help us put the "engineering" in "prompt engineering".
+
+What you might want to think about is what impact this could have for any of your human peers?
+
+By being very explicit about needs and requirements, you've also started to structure things
+in a way that will make them much easier for them to understand too.
+
+And you thought you were just trying to help your AI!
+
