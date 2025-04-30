@@ -153,6 +153,43 @@ If you get a system error message then re-check your API keys have been entered 
 
 ![First conversation screen with a reply from the AI](img/first-conversation-success.webp)
 
+## Using m6rc
+
+The `m6rc` Metaphor compiler works on files you create.
+By convention these have a `.m6r` file extension type.
+
+You can create and edit Metaphor files using the file editor within Humbug.
+To create a new file, use the "New File" option in the "File" menu.
+
+Until you save a file, the editor isn't sure what sort of a file it is and so won't highlight the different parts of
+the Metaphor language, but if you use the "Save As" option in the "File" menu you can save your new file as
+something like `Hello.m6r`.
+An ideal place to save this is in the `metaphor` folder that was created when you created the new mindspace.
+
+To get started, let's go back to the simple Metaphor file from earlier:
+
+```metaphor
+Role:
+    You are a world-class python programmer.
+
+Context:
+    I need a simple program to demonstrate using the Metaphor language to solve a programming problem.
+
+Action:
+    Build me a "hello world" program.
+```
+
+Copy and paste this into your new `Hello.m6r` file, then save it, and you should see it looks something like this:
+
+![A simple metaphor prompt file](img/hello-m6r.webp)
+
+There are a couple of different ways to use the Metaphor compiler inside Humbug.
+The most powerful one is to use the "System Shell" as that lets you compile and start a Metaphor-based prompt in one
+command.
+The simpler option, however, is to use the "New Metaphor Conversation" option in the "File" menu.
+
+
+
 ## To Do:
 
 - syntax
