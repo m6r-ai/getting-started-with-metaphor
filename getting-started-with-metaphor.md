@@ -44,8 +44,46 @@ Here are a few:
 - You can have the same conversation with different LLMs and see what new insights come from each one.
 - It's possible to start a conversation with one AI and finish it with a different one.
 
-## A
+## A first Metaphor prompt
 
+All Metaphor prompts start with the same structure.
+First, there's a "role" that describes the role you want your AI to play.
+Second, there's a "context" that tells the AI everything it needs to know that's specific to what you want it to do.
+Third (and last), there's an "action" that tells the AI what you want it to do.
+
+Each of these has a special keyword in the Metaphor language, specifically, "Role", "Context", and "Action".
+The capital letters at the start of each keyword are important.
+
+Here's an example:
+
+```metaphor
+Role:
+    You are a world-class python programmer.
+
+Context:
+    I need a simple program to demonstrate using the Metaphor language to solve a programming problem.
+
+Action:
+    Build me a "hello world" program.
+```
+
+If you give this to an AI (perhaps via a web chat interface) you'll probably find it does the right thing without
+any extra work, but to use Metaphor properly we use a prompt compiler.
+
+The prompt compiler checks that the Metaphor prompt is structured the right way and allows for more advanced
+functionality.  For now, we won't worry about other functionality.
+
+What you will need is the right sort of prompt compiler.
+This is called `m6rc`, short for "Metaphor compiler".
+In case you're wondering, "m6r" is short for Metaphor - it's an "m", 6 letters, and an "r".
+
+There are currently two version of the `m6rc` software.
+One is a command line version and you can find this at [https://github.com/m6r-ai/m6rc](https://github.com/m6r-ai/m6rc).
+The other is built into a GUI-based application called "Humbug".
+If you don't have this already you can find instructions on how to download the latest free (open source) version
+from [https://m6r.ai/humbug](https://m6r.ai/humbug).
+
+For this getting started guide we're going to be using Humbug.
 
 ## To Do:
 
