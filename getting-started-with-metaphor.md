@@ -68,12 +68,12 @@ Action:
 ```
 
 If you give this to an AI (perhaps via a web chat interface) you'll probably find it does the right thing without
-any extra work, but to use Metaphor properly we use a prompt compiler.
+any extra work, but to use Metaphor properly you need to use a prompt compiler.
 
 ## The m6rc prompt compiler
 
 The prompt compiler checks that the Metaphor prompt is structured the right way and allows for more advanced
-functionality.  For now, we won't worry about other functionality.
+functionality.  For now, you don't need to worry about other functionality.
 
 What you will need is the right sort of prompt compiler.
 This is called `m6rc`, short for "Metaphor compiler".
@@ -85,7 +85,7 @@ The other is built into a GUI-based application called "Humbug".
 If you don't have this already you can find instructions on how to download the latest free (open source) version
 from [https://m6r.ai/humbug](https://m6r.ai/humbug).
 
-For this getting started guide we're going to be using Humbug.
+For this getting started guide you're going to be using Humbug.
 
 ## Getting started with Humbug
 
@@ -126,9 +126,32 @@ the "File" menu.
 You can use an existing folder for your mindspace, but it's probably best to create a new folder when you click
 "New Mindspace".
 
-Once you've selected the location for your new mindspace, you'll see a new dialog that looks somethign like this:
+Once you've selected the location for your new mindspace, you'll see a new dialog that looks something like this:
 
 ![New Mindspace](img/new-mindspace.webp)
+
+The dialog shows Humbug will always create a "conversations" folder, and defaults to creating a "metaphor" folder.
+It has an option to also create a "src" folder for software development if you want it.
+
+To test your API keys, start a conversation by selecting "New Conversation" from the "File" menu.
+Humbug will choose a default AI model and conversations settings for you to use.
+You can change these using the "Mindspace Settings" option in "Edit" menu, and you can also change them on a
+conversation-by-conversation basis by usign the "Conversation Settings" option.
+When you do either of these you will be presented with AI models that are available with your API keys.
+
+You'll see a screen something like this:
+
+![First conversation screen](img/first-conversation.webp)
+
+You can type a message to the AI in the message box at the bottom.
+When you're done, you submit the message by pressing Cmd+J on MacOS, or Ctrl+J on Windows or Linux.
+The return/enter key doesn't submit messages because this message box is designed to let you write very complex
+messages to the AI and you don't want to accidently submit them when you're trying to lay out text.
+
+If you say something like "Hello", you should see a response back from the AI.
+If you get a system error message then re-check your API keys have been entered correctly in the Preferences dialog.
+
+![First conversation screen with a reply from the AI](img/first-conversation-success.webp)
 
 ## To Do:
 
