@@ -144,7 +144,7 @@ You'll see a screen something like this:
 ![First conversation screen](img/first-conversation.webp)
 
 You can type a message to the AI in the message box at the bottom.
-When you're done, you submit the message by pressing Cmd+J on MacOS, or Ctrl+J on Windows or Linux.
+When you're done, you submit the message by pressing Cmd+J on Mac OS, or Ctrl+J on Windows or Linux.
 The return/enter key doesn't submit messages because this message box is designed to let you write very complex
 messages to the AI and you don't want to accidently submit them when you're trying to lay out text.
 
@@ -188,6 +188,16 @@ The most powerful one is to use the "System Shell" as that lets you compile and 
 command.
 The simpler option, however, is to use the "New Metaphor Conversation" option in the "File" menu.
 
+When the dialog appears, choose your `Hello.m6r` file and click OK.
+
+If all goes well you will see a new conversation tab opened and the output of `m6rc` will be shown in the message box.
+This isn't automatically sent to the AI so you can change the AI model and conversation settings if you want to.
+Once you're happy with those settings you submit the prompt with Cmd+J (Mac OS) or Ctrl+J (Windows or Linux).
+
+If everything works, the AI will respond with a simple one-line python program - the famous "Hello, world!".
+The format may be a little different, as AIs will not respond the same way every time.
+
+![Hello, world output](img/hello-world.webp)
 
 
 ## To Do:
