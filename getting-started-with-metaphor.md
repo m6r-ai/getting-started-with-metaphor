@@ -70,6 +70,8 @@ Action:
 If you give this to an AI (perhaps via a web chat interface) you'll probably find it does the right thing without
 any extra work, but to use Metaphor properly we use a prompt compiler.
 
+## The m6rc prompt compiler
+
 The prompt compiler checks that the Metaphor prompt is structured the right way and allows for more advanced
 functionality.  For now, we won't worry about other functionality.
 
