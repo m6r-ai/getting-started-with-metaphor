@@ -34,4 +34,22 @@ to them.
 AIs are no different.
 Unlike most people, however, LLMs don't remember what you've said to them before.
 Fortunately, they are incredibly fast at reading so they can get up to speed in a few seconds if you give
-them the full picture at the start of each new conversation.
+them the full picture from the outset.
+
+While forgetfulness might seem like a nuissance, working with LLMs this way can have surprising benefits.
+Here are a few:
+
+- Each new conversation is a fresh start so the LLM doesn't bring misunderstandings or disagreements from
+  previous conversations into the new one.
+- You can have the same conversation with different LLMs and see what new insights come from each one.
+- It's possible to start a conversation with one AI and finish it with a different one.
+
+## A
+
+
+## To Do:
+
+- syntax
+- iterating to a solution
+- getting started from nothing
+- interactions with other people are easier.
