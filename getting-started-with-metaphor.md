@@ -407,7 +407,6 @@ For example, you can insert a segment of Python source code into a `Context` blo
 
 ```metaphor
     Context: Existing code
-
         The following function implements path validation:
 
         ```python
@@ -421,6 +420,30 @@ For example, you can insert a segment of Python source code into a `Context` blo
 
             return None
         ```
+```
+
+This approach is great for short fragments, but complex applications may have many thousands of lines of documents
+or code.
+To address this, Metaphor has an `Embed` keyword.
+
+The `Embed` keyword takes the name of a file after the colon that follow it.
+When `m6rc` encounters this it will read the file and embed the contents of the file into the prompt.
+This means each time the prompt is compiled, the current version of the file is used.
+
+Here's an example:
+
+```metaphor
+    Context: Existing code
+        The following file implements the start of the application:
+
+        Embed: src/m6rc/m6rc.py
+```
+
+The `Embed` keyword can use wildcard matches, so one `Embed` statement can embed multiple files.
+For example, the following statement will embed all the Python files in a folder:
+
+```metaphor
+    Embed: src/m6rc/*.py
 ```
 
 ## To Do:
