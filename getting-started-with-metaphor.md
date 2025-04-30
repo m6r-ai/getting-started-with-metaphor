@@ -230,7 +230,7 @@ This is just like you would do with an app or web-based chat interface.
 
 For example, you can ask the AI questions about what it has just done:
 
-![Asking about the hello world programm](img/first-question.webp)
+![Asking about the hello world program](img/first-question.webp)
 
 This ability to ask questions is incredibly useful.
 Here are some benefits:
@@ -261,11 +261,118 @@ There are a few more important parts to this:
   This is because all Metaphor keywords allow additional information on the keyword line.
 - Each block of text is indented by 4 spaces.
   This spacing is important because it lets the Metaphor compiler check the contents of the Metaphor file.
+  All indentations within Metaphor files are 4, or multiples of 4 spaces.
 
 After each of these 3 types of keyword, Metaphor let's you specify a section/subsection heading.
 This is like the section headings in a normal document.
 These are useful because they let you structure things more clearly.
 They are also useful because you can discuss specific parts of the Metaphor prompt with the AI.
+
+Within a `Role` section, you can have other `Role` sub-sections.
+Similarly, within a `Context` section, you can have other `Context` sub-sections, and you can have `Action`
+sub-sections within an `Action` section.
+In most cases, you probably won't use sub-sections in anything other than the `Context` section.
+This is because it's the `Context` section where you provide all the details of what you want, why you want it,
+and how you want it.
+
+### Adding context
+
+Here's a simple example where some more context is being provided:
+
+```metaphor
+Role:
+    You are a world-class python programmer.
+
+Context:
+    I need a simple program to demonstrate using the Metaphor language to solve a programming problem.
+
+    Context: Python implementation rules
+        As an engineer working with the application, I want the application to be easy to use and understand,
+        so I can maintain and enhance it over time.
+
+        Context: Implement in Python 3
+            The application will be written in the latest version of Python 3.  Assume a baseline of Python 3.10.
+
+        Context: Indentation of code
+            Code must be indented by 4 spaces.
+
+        Context: Use docstrings
+            Docstrings must be used to describe all modules, classes, and functions.  This should follow PEP 257 guidelines.
+
+        Context: Use type hints
+            Type hints must be used for function arguments and return values.
+
+        Context: Use comments
+            Comments must be used to describe any complex logic, or rationale that would not be obvious from
+            simply reading the code.  This ensures that anyone reading the code for the first time will be able
+            to understand why the code is the way it is.
+
+        Context: PEP 8 imports
+            The import list in any module should follow PEP 8 guidelines, including the ordering of imports.
+
+Action:
+    Build me a "hello world" program.
+```
+
+The simple example now has some guideance to the LLM about how it should structure its Python code.
+For our simple "Hello, world!" program, this doesn't matter too much, but if you want something more interesting,
+then these are the sorts of things a developer would likely care about.
+
+One thing to note is the AI understands all of these things but it also understands lots of other ways it could
+achieve a working program.
+By being more precise, the Metaphor prompt helps make sure any resuling software follows in that specific form.
+
+### Comments
+
+Sometimes it's useful to make notes in a Metaphor prompt that won't be passed to the AI.
+These are comments for the benefit of anyone who might want to understand, re-use, or update the prompt.
+
+In Metaphor, comments start with a `#` symbol.
+Everything after that symbol on the same line is completely ignored by `m6rc`.
+
+You could add comments like this:
+
+```metaphor
+Role:
+    # We want the AI to be a world-class programmer so it does it's best work.  We don't want it to act like a novice.
+    You are a world-class python programmer.
+
+Context:
+    I need a simple program to demonstrate using the Metaphor language to solve a programming problem.
+
+    # Ensure the AI follows our coding standards.
+    Context: Python implementation rules
+        As an engineer working with the application, I want the application to be easy to use and understand,
+        so I can maintain and enhance it over time.
+
+        Context: Implement in Python 3
+            The application will be written in the latest version of Python 3.  Assume a baseline of Python 3.10.
+
+        Context: Indentation of code
+            Code must be indented by 4 spaces.
+
+        Context: Use docstrings
+            Docstrings must be used to describe all modules, classes, and functions.  This should follow PEP 257 guidelines.
+
+        Context: Use type hints
+            Type hints must be used for function arguments and return values.
+
+        Context: Use comments
+            Comments must be used to describe any complex logic, or rationale that would not be obvious from
+            simply reading the code.  This ensures that anyone reading the code for the first time will be able
+            to understand why the code is the way it is.
+
+        Context: PEP 8 imports
+            The import list in any module should follow PEP 8 guidelines, including the ordering of imports.
+
+Action:
+    # Ask the AI to do exactly one thing.
+    Build me a "hello world" program.
+```
+
+Humbug's syntax highlighting makes this all a little easier to read!
+
+![Updated hello world metaphor file](img/updated-m6r.webp)
 
 ## To Do:
 
