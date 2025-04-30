@@ -232,6 +232,40 @@ For example, you can ask the AI questions about what it has just done:
 
 ![Asking about the hello world programm](img/first-question.webp)
 
+This ability to ask questions is incredibly useful.
+Here are some benefits:
+
+- You can ask the AI any questions you might have about what you gave it in the Metaphor prompt.
+- You can ask the AI explain any part of what it generates.
+- You can ask it how confident it is in its answers.
+- You can even ask how to improve your prompt if want to be able to use it again in the future.
+
+## More about Metaphor's syntax
+
+Here's the simple example again:
+
+```metaphor
+Role:
+    You are a world-class python programmer.
+
+Context:
+    I need a simple program to demonstrate using the Metaphor language to solve a programming problem.
+
+Action:
+    Build me a "hello world" program.
+```
+
+There are a few more important parts to this:
+
+- After each keyword is a `:`.
+  This is because all Metaphor keywords allow additional information on the keyword line.
+- Each block of text is indented by 4 spaces.
+  This spacing is important because it lets the Metaphor compiler check the contents of the Metaphor file.
+
+After each of these 3 types of keyword, Metaphor let's you specify a section/subsection heading.
+This is like the section headings in a normal document.
+These are useful because they let you structure things more clearly.
+They are also useful because you can discuss specific parts of the Metaphor prompt with the AI.
 
 ## To Do:
 
