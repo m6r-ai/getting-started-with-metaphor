@@ -105,6 +105,9 @@ You can follow these sign up links:
 - Mistral: [https://docs.mistral.ai/getting-started/quickstart/](https://docs.mistral.ai/getting-started/quickstart/)
 
 Next you can start Humbug.
+
+### First steps
+
 Once it's running for the first time you'll see something a little like this:
 
 ![start screen](img/start-screen.webp)
@@ -117,6 +120,8 @@ Copy your Google and/or Mistral (or any other) API keys into the appropriate lin
 
 You'll want to check the API keys are working properly.  The easiest way to do this is to start a conversation, but
 Humbug needs you to do one thing first.
+
+### Mindspaces
 
 Humbug is designed to let you work on lots of different projects and have different settings and preferences for each.
 It does this by using a "Mindspace".
@@ -132,6 +137,8 @@ Once you've selected the location for your new mindspace, you'll see a new dialo
 
 The dialog shows Humbug will always create a "conversations" folder, and defaults to creating a "metaphor" folder.
 It has an option to also create a "src" folder for software development if you want it.
+
+### A test conversation
 
 To test your API keys, start a conversation by selecting "New Conversation" from the "File" menu.
 Humbug will choose a default AI model and conversations settings for you to use.
@@ -158,6 +165,8 @@ If you get a system error message then re-check your API keys have been entered 
 The `m6rc` Metaphor compiler works on files you create.
 By convention these have a `.m6r` file extension type.
 
+### Metaphor files
+
 You can create and edit Metaphor files using the file editor within Humbug.
 To create a new file, use the "New File" option in the "File" menu.
 
@@ -183,6 +192,8 @@ Copy and paste this into your new `Hello.m6r` file, then save it, and you should
 
 ![A simple metaphor prompt file](img/hello-m6r.webp)
 
+### Compiling a prompt
+
 There are a couple of different ways to use the Metaphor compiler inside Humbug.
 The most powerful one is to use the "System Shell" as that lets you compile and start a Metaphor-based prompt in one
 command.
@@ -198,6 +209,28 @@ If everything works, the AI will respond with a simple one-line python program -
 The format may be a little different, as AIs will not respond the same way every time.
 
 ![Hello, world output](img/hello-world.webp)
+
+### A slight aside about Humbug
+
+You may have noticed that Humbug has a `conversations` folder.
+If you expand this you'll see both of the conversations we've had with the AI are stored there.
+You can safely delete these if you no longer want them, but they can be a great record of your conversations with
+different LLMs.
+You can also give them more meaningful names, as by default they have the date and time of the conversation as their name.
+
+You may also have seen there are icons/buttons on the right hand side of parts of the conversations.
+These let you copy or save sections of conversations.
+This is really useful when they contain file contents or code fragments you want to use elewhere.
+There are also some powerful conversation management features, although they are out of scope for this tutorial.
+
+### Metaphor conversations are just conversations
+
+If you look at your Metaphor conversation you'll see that after the AI responds you can carry on the conversation.
+This is just like you would do with an app or web-based chat interface.
+
+For example, you can ask the AI questions about what it has just done:
+
+![Asking about the hello world programm](img/first-question.webp)
 
 
 ## To Do:
