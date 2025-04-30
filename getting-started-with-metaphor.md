@@ -6,7 +6,7 @@ Version 0.1 - 2025-04-30
 
 Prompting AIs can be hard.
 While they sometimes do exactly what you want, they often get it wrong.
-Even when you do get what you want, it's far too easy to lose track of what what worked and why.
+Even when you do get what you want, it's far too easy to lose track of what worked and why.
 It's even harder when you want to work with multiple AIs.
 
 Metaphor is a simple, open-source, prompt creation language that lets you create consistent, reusable prompts that
@@ -27,6 +27,7 @@ This guide will show you how.
 Metaphor is designed to be used at the start of a new conversation with an AI large language model (LLM).
 It sets the scene for the LLM, ensuring it knows how you want it behave, what you want it to do, and allows you to
 tell it everything it needs to know to do that.
+Throughout this document you'll see AI and LLM used interchangeably.
 
 You might ask "AIs know almost everything - why do I need to do this?"
 The answer is surprisingly simple.
@@ -267,7 +268,7 @@ There are a few more important parts to this:
   This spacing is important because it lets the Metaphor compiler check the contents of the Metaphor file.
   All indentations within Metaphor files are 4, or multiples of 4 spaces.
 
-After each of these 3 types of keyword, Metaphor let's you specify a section/subsection heading.
+After each of these 3 types of keyword, Metaphor lets you specify a section/subsection heading.
 This is like the section headings in a normal document.
 These are useful because they let you structure things more clearly.
 They are also useful because you can discuss specific parts of the Metaphor prompt with the AI.
@@ -338,7 +339,7 @@ You could add comments like this:
 
 ```metaphor
 Role:
-    # We want the AI to be a world-class programmer so it does it's best work.  We don't want it to act like a novice.
+    # We want the AI to be a world-class programmer so it does its best work.  We don't want it to act like a novice.
     You are a world-class python programmer.
 
 Context:
@@ -507,7 +508,7 @@ Then include those rules in your `Hello.m6r` file:
 
 ```metaphor
 Role:
-    # We want the AI to be a world-class programmer so it does it's best work.  We don't want it to act like a novice.
+    # We want the AI to be a world-class programmer so it does its best work.  We don't want it to act like a novice.
     You are a world-class python programmer.
 
 Context:
