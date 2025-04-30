@@ -1,0 +1,6 @@
+# Ignore temp files
+*~
+*.swp
+
+# Ignore virtual environment
+venv
