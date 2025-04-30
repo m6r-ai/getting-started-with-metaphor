@@ -51,7 +51,7 @@ First, there's a "role" that describes the role you want your AI to play.
 Second, there's a "context" that tells the AI everything it needs to know that's specific to what you want it to do.
 Third (and last), there's an "action" that tells the AI what you want it to do.
 
-Each of these has a special keyword in the Metaphor language, specifically, "Role", "Context", and "Action".
+Each of these has a special keyword in the Metaphor language, specifically, `Role`, `Context`, and `Action`.
 The capital letters at the start of each keyword are important.
 
 Here's an example:
