@@ -87,6 +87,49 @@ from [https://m6r.ai/humbug](https://m6r.ai/humbug).
 
 For this getting started guide we're going to be using Humbug.
 
+## Getting started with Humbug
+
+Humbug is a front end for LLMs, but doesn't contain an LLM.
+It supports many popular LLMs from Anthropic, DeepSeek, Google, Mistral, OpenAI, and xAI.
+It also supports local installations of Ollama.
+With the exception of Ollama, all the others are commercial services that require API (application programming interface)
+keys to use them.
+
+Generally commercial LLM providers require you to pay in advance.
+The costs can be very low, but both Google and Mistral currently offer a free tier of API access for testing and you
+can use them.
+
+You can follow these sign up links:
+
+- Google: [https://ai.google.dev/gemini-api/docs/api-key](https://ai.google.dev/gemini-api/docs/api-key)
+- Mistral: [https://docs.mistral.ai/getting-started/quickstart/](https://docs.mistral.ai/getting-started/quickstart/)
+
+Next you can start Humbug.
+Once it's running for the first time you'll see something a little like this:
+
+![start screen](img/start-screen.webp)
+
+If you go to the "Humbug" menu and select "Preferences" you will see a user settings page:
+
+![API key settings](img/api-keys.webp)
+
+Copy your Google and/or Mistral (or any other) API keys into the appropriate lines and then click OK.
+
+You'll want to check the API keys are working properly.  The easiest way to do this is to start a conversation, but
+Humbug needs you to do one thing first.
+
+Humbug is designed to let you work on lots of different projects and have different settings and preferences for each.
+It does this by using a "Mindspace".
+Each project uses a different mindspace.
+For this getting started guide the easiest choice is to create a new mindspace using the "New Mindspace" option from
+the "File" menu.
+You can use an existing folder for your mindspace, but it's probably best to create a new folder when you click
+"New Mindspace".
+
+Once you've selected the location for your new mindspace, you'll see a new dialog that looks somethign like this:
+
+![New Mindspace](img/new-mindspace.webp)
+
 ## To Do:
 
 - syntax
