@@ -410,7 +410,7 @@ For example, you can insert a segment of Python source code into a `Context` blo
 
         The following function implements path validation:
 
-        \`\`\`python
+        ```python
         def validate_include_paths(paths: List[str]) -> Optional[str]:
             if not paths:
                 return None
@@ -420,7 +420,7 @@ For example, you can insert a segment of Python source code into a `Context` blo
                     return f"Not a valid directory: {path}"
 
             return None
-        \`\`\`
+        ```
 ```
 
 ## To Do:
