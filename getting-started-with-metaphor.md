@@ -470,7 +470,7 @@ The compiler automatically adds indentation to each included line to ensure the 
 is maintained.
 
 If you wanted to split our last example, here's how you could do it!
-First split out the Python rules into a new file, called `python-rules.m6r`:
+First split out the Python rules into a new file, called `python-rules.m6r` and put it in the `metaphor` folder:
 
 ```metaphor
 # Ensure the AI follows our coding standards.
@@ -517,10 +517,17 @@ Action:
 ```
 
 Now you have a set of reusable rules.
+
 You can also use `Include` inside other files that you include to encourage modularity and reusability.
 
-## To Do:
+## Closing thoughts
 
-- iterating to a solution
-- getting started from nothing
-- interactions with other people are easier.
+You've now seen how to get started with Metaphor (and Humbug).
+It's very effective at communicating what you want to your AI.
+
+What you might want to think about is the potential impact it can have on your human peers.
+
+By being very explicit about needs and requirements for your LLMs, you've probably also started to structure things
+in a way that will make them much easier for your peers to understand too.
+
+The clarity you've brought for your AIs is exactly the sort of clarity you need elsewhere!
