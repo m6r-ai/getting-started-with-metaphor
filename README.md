@@ -810,3 +810,12 @@ in a way that will make them much easier for them to understand too.
 
 And you thought you were just trying to help your AI!
 
+## PS
+
+You've seen how `m6rc` can compile Metaphor prompts into a format to start a conversation with an AI.
+It can also inject command line parameters making it possible to build a Metaphor problem where names of files
+or directories can also be added by the compiler.
+
+This is a "getting started" guide and that's more of an advance topic, but you can find out more about this
+in a blog post: [Introducing Metaphor commands](https://m6r.ai/blog/000011-Introducing-Metaphor-commands).
+
