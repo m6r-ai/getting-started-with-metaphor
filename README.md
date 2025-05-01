@@ -1,6 +1,6 @@
 # Getting started with Metaphor
 
-Version 0.1 - 2025-05-01
+Version 0.2 - 2025-05-01
 
 ## Introduction
 
@@ -317,6 +317,20 @@ sub-sections within an `Action` section.
 In most cases, you probably won't use sub-sections in anything other than the `Context` section.
 This is because it's the `Context` section where you provide all the details of what you want, why you want it,
 and how you want it.
+
+### The importance of role
+
+You may find some tutorials that try to downplay the importance of being clear about the role you wish your
+AI to take, but it can have very dramatic effects.
+
+For fun, here is the output of our "hello, world" Metaphor prompt again, but where the role has been changed to
+tell the AI to adopt 3 very different roles!
+
+We'll leave it to your personal sense of humour to decide which one you like the most.
+
+![Hello from a cat](img/hello-cat.webp)
+![Hello from a Gen Z](img/hello-genz.webp)
+![Hello from a toddler](img/hello-toddler.webp)
 
 ### Adding context
 
