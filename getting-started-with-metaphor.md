@@ -319,7 +319,7 @@ and how you want it.
 So far we've seen a very simple example, but real-world problems are more complex and need more information.
 You can do with this by expanding the context section.
 
-Here's a simple example where some more context is being provided:
+Here's a simple example where more context is being provided:
 
 ```metaphor
 Role:
@@ -356,7 +356,7 @@ Action:
     Build me a "hello world" program.
 ```
 
-The simple example now has some guideance to the LLM about how it should structure its Python code.
+The simple example now includes guideance to the LLM about how it should structure its Python code.
 For our simple "Hello, world!" program, this doesn't matter too much, but if you want something more interesting,
 then these are the sorts of things a developer would likely care about.
 
@@ -547,7 +547,7 @@ For example, the following statement will embed all the Python files in a folder
     Embed: src/m6rc/*.py
 ```
 
-### Good practices for embedded content
+### Good practices for embedding content
 
 When using the `Embed` keyword, you should keep these guidelines in mind:
 
@@ -555,10 +555,10 @@ When using the `Embed` keyword, you should keep these guidelines in mind:
 
 While LLMs can process large amounts of text, they all have "token" limits.
 Tokens are the way LLMs break down your message.
-There's no easy way to predict how many tokens are used in a conversation, but in English a rough guide is that
-a token matches about 3/4 of a word, and each unit of punctuation is often a token too.
+There's no easy way to predict how many tokens are used in a conversation, but in English a
+token is typically about 3/4 of a word, and each unit of punctuation is often a token too.
 
-LLM pricing is usually basedo on the numbers of tokens used, so the more tokens you use, the more expensive the
+LLM pricing is usually based on the numbers of tokens used, so the more tokens you use, the more expensive the
 prompt is.
 
 For best results:
