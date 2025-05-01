@@ -328,8 +328,16 @@ tell the AI to adopt 3 very different roles!
 
 We'll leave it to your personal sense of humour to decide which one you like the most.
 
+#### You are a cat
+
 ![Hello from a cat](img/hello-cat.webp)
+
+#### You are a Gen Z 
+
 ![Hello from a Gen Z](img/hello-genz.webp)
+
+#### You are a 2 year old toddler
+
 ![Hello from a toddler](img/hello-toddler.webp)
 
 ### Adding context
