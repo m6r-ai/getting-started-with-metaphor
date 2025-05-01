@@ -167,12 +167,14 @@ It has an option to also create a "src" folder for software development if you w
 
 When you create a new mindspace, Humbug sets up a directory structure like this:
 
+```plaintext
 my-project/              # Your mindspace root folder
 ├── conversations/       # Where conversation records are stored
 ├── metaphor/            # Where your .m6r files should be saved
 │   ├── Hello.m6r        # Example file we'll create later
 │   └── python-rules.m6r # Example include file we'll create later
 └── src/                 # (Optional) For source code files
+```
 
 Throughout this guide, when we refer to saving files in the "metaphor folder," we mean this specific directory
 within your mindspace.
@@ -182,7 +184,7 @@ within your mindspace.
 To test your API keys, start a conversation by selecting "New Conversation" from the "File" menu.
 Humbug will choose a default AI model and conversations settings for you to use.
 You can change these using the "Mindspace Settings" option in "Edit" menu, and you can also change them on a
-conversation-by-conversation basis by usign the "Conversation Settings" option.
+conversation-by-conversation basis by using the "Conversation Settings" option.
 When you do either of these you will be presented with AI models that are available with your API keys.
 
 You'll see a screen something like this:
@@ -259,7 +261,7 @@ You can also give them more meaningful names, as by default they have the date a
 
 You may also have seen there are icons/buttons on the right hand side of parts of the conversations.
 These let you copy or save sections of conversations.
-This is really useful when they contain file contents or code fragments you want to use elewhere.
+This is really useful when they contain file contents or code fragments you want to use elsewhere.
 There are also some powerful conversation management features, although they are out of scope for this tutorial.
 
 ### Metaphor conversations are just conversations
@@ -356,13 +358,13 @@ Action:
     Build me a "hello world" program.
 ```
 
-The simple example now includes guideance to the LLM about how it should structure its Python code.
+The simple example now includes guidance to the LLM about how it should structure its Python code.
 For our simple "Hello, world!" program, this doesn't matter too much, but if you want something more interesting,
 then these are the sorts of things a developer would likely care about.
 
 One thing to note is the AI understands all of these things but it also understands lots of other ways it could
 achieve a working program.
-By being more precise, the Metaphor prompt helps make sure any resuling software follows in that specific form.
+By being more precise, the Metaphor prompt helps make sure any resulting software follows in that specific form.
 
 ### When to use context subsections
 
@@ -755,7 +757,7 @@ Action:
     Please review the requirements and tell me what's unclear, confusing, or ambiguous.
 ```
 
-When you compiler and use this prompt, you're essentially asking your LLM to help you fill in the missing parts.
+When you compile and use this prompt, you're essentially asking your LLM to help you fill in the missing parts.
 If it knows 10 ways to do something, this is where it can help you narrow it down to the one you want.
 If it doesn't understand some part of what you're trying to achieve, this is where it can ask you to clarify.
 
@@ -775,7 +777,7 @@ it allows you to have one or more AIs assist you in assisting them!
 You've now seen how to get started with Metaphor (and Humbug) and how it can be very effective at communicating
 your needs to an AI.
 
-In sofware development, the norm is to store earlier versions in a revision control system so you can evaluate
+In software development, the norm is to store earlier versions in a revision control system so you can evaluate
 earlier versions of the code and see how it evolves.
 Metaphor now lets you do the same thing with the prompts that help you use with your AI too.
 If you capture the resulting conversations, you get a thorough audit trail of your AI-assisted work too.
