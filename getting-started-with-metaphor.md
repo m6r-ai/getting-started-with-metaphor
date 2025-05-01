@@ -316,8 +316,8 @@ and how you want it.
 
 ### Adding context
 
-So far we've seen a very simple example, but real-world problems are more complex.
-We deal with this by expanding the context section.
+So far we've seen a very simple example, but real-world problems are more complex and need more information.
+You can do with this by expanding the context section.
 
 Here's a simple example where some more context is being provided:
 
