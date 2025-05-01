@@ -745,6 +745,22 @@ Another reason for this is so you can use the same base Metaphor prompt but make
 If you have a 5 step plan you can create a prompt that includes all 5 steps and then just tell it which step to start
 from each time you use the prompt.
 
+## More on context
+
+The majority of the content in a Metaphor prompt is the context section.
+This where you get to have the greatest impact on what your AI can do, but it's also where you can confuse it
+if you're not careful.
+
+Here are a few more tips and tricks for the context blocks:
+
+- Be descriptive - describe things and why you want them, so the AI understands what you're trying to achieve.
+  Try to avoid unconditional statements that might look like actions.
+- Restructure your works so that there's a single clear description of anything you want the AI to know.
+  If you're unsure then ask the AI for help in clarifying and simplifying things.
+- Don't include unless it serves a purpose.
+  For example, don't include descriptions of things that are purely of historical interest unless you need the
+  AI to specifically act on them in some way.
+
 ## Building up the structure
 
 You've now got a clearer understanding of how Metaphor works, but it can be pretty daunting to start with an almost
