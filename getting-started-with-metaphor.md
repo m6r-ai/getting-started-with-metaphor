@@ -1,6 +1,6 @@
 # Getting started with Metaphor
 
-Version 0.1 - 2025-04-30
+Version 0.1 - 2025-05-01
 
 ## Introduction
 
@@ -14,6 +14,11 @@ work across a variety of AI platforms.
 It lets you capture the what you need your AI to understand so it has a clear idea what you want it to do, without
 needing to guess (hallcinate) any details.
 
+Metaphor solves three key problems that plague direct prompting: inconsistency across different AI models,
+difficulty maintaining prompt history, and challenges in collaboration.
+By structuring prompts with clear rules, Metaphor creates a standardized approach that works reliably across
+different AI platforms while making prompts reusable and shareable with team members.
+
 Metaphor is AI agnostic.
 It works the same way with large language models from all major AI vendors, including Anthropic, DeepSeek, Google,
 Mistral, OpenAI, and xAI, making it easy to switch between them and find the right one for your needs.
@@ -21,6 +26,20 @@ Mistral, OpenAI, and xAI, making it easy to switch between them and find the rig
 The Metaphor language is easy to learn.
 It has only a few keywords and takes only a few minutes to get started.
 This guide will show you how.
+
+## Who is this for?
+
+Metaphor has many uses.
+Here are some examples of users it can help:
+
+- Software developers who want consistent, reliable AI assistance
+- Teams collaborating on AI-assisted projects
+- Technical writers creating documentation with AI help
+- Researchers who need reproducible AI interactions
+- Anyone who wants their AI interactions to be more structured and reliable
+
+While no programming experience is required to use Metaphor, basic familiarity with text editors and file systems
+will be helpful for following this guide.
 
 ## How is Metaphor used?
 
@@ -72,19 +91,20 @@ Action:
     Build me a "hello world" program.
 ```
 
-If you give this to an AI (perhaps via a web chat interface) you'll probably find it does the right thing without
-any extra work, but to use Metaphor properly you need to use a prompt compiler.
+If you give this simple example to an AI (perhaps via a web chat interface) you'll probably find it does the right
+thing without any extra work, but to use Metaphor properly you need to use the `m6rc` prompt compiler.
 
 ## The m6rc prompt compiler
 
-The prompt compiler checks that the Metaphor prompt is structured the right way and allows for more advanced
-functionality.  For now, you don't need to worry about other functionality.
+The `m6rc` prompt compiler is a software tool that checks your Metaphor language prompt is structured the right way
+and translates that into the actual prompt your AI requires.
+It also has functionality to allow you to build more sophisticated prompts.
+For now, you don't need to worry about that - we'll get to it later.
 
-What you will need is the right sort of prompt compiler.
-This is called `m6rc`, short for "Metaphor compiler".
-In case you're wondering, "m6r" is short for Metaphor - it's an "m", 6 letters, and an "r".
+In case you're wondering, "m6r" is short for Metaphor - it's an "m", 6 letters, and an "r", so `m6rc` is short for
+"Metaphor compiler".
 
-There are currently two version of the `m6rc` software.
+There are currently two versions of the `m6rc` software.
 One is a command line version and you can find this at [https://github.com/m6r-ai/m6rc](https://github.com/m6r-ai/m6rc).
 The other is built into a GUI-based application called "Humbug".
 If you don't have this already you can find instructions on how to download the latest free (open source) version
@@ -143,6 +163,20 @@ Once you've selected the location for your new mindspace, you'll see a new dialo
 The dialog shows Humbug will always create a "conversations" folder, and defaults to creating a "metaphor" folder.
 It has an option to also create a "src" folder for software development if you want it.
 
+### Humbug Directory Structure
+
+When you create a new mindspace, Humbug sets up a directory structure like this:
+
+my-project/              # Your mindspace root folder
+├── conversations/       # Where conversation records are stored
+├── metaphor/            # Where your .m6r files should be saved
+│   ├── Hello.m6r        # Example file we'll create later
+│   └── python-rules.m6r # Example include file we'll create later
+└── src/                 # (Optional) For source code files
+
+Throughout this guide, when we refer to saving files in the "metaphor folder," we mean this specific directory
+within your mindspace.
+
 ### A test conversation
 
 To test your API keys, start a conversation by selecting "New Conversation" from the "File" menu.
@@ -170,7 +204,7 @@ If you get a system error message then re-check your API keys have been entered 
 The `m6rc` Metaphor compiler works on files you create.
 By convention these have a `.m6r` file extension type.
 
-### Metaphor files
+### Working with Metaphor files
 
 You can create and edit Metaphor files using the file editor within Humbug.
 To create a new file, use the "New File" option in the "File" menu.
@@ -200,8 +234,8 @@ Copy and paste this into your new `Hello.m6r` file, then save it, and you should
 ### Compiling a prompt
 
 There are a couple of different ways to use the Metaphor compiler inside Humbug.
-The most powerful one is to use the "System Shell" as that lets you compile and start a Metaphor-based prompt in one
-command.
+The most powerful one is to use the "System Shell" as that lets you compile your Metaphor prompt and start a
+conversation with your AI using that compiled prompt in one command.
 The simpler option, however, is to use the "New Metaphor Conversation" option in the "File" menu.
 
 When the dialog appears, choose your `Hello.m6r` file and click OK.
@@ -218,7 +252,7 @@ The format may be a little different, as AIs will not respond the same way every
 ### A slight aside about Humbug
 
 You may have noticed that Humbug has a `conversations` folder.
-If you expand this you'll see both of the conversations we've had with the AI are stored there.
+If you expand this you'll see both of the conversations you've had with the AI are stored there.
 You can safely delete these if you no longer want them, but they can be a great record of your conversations with
 different LLMs.
 You can also give them more meaningful names, as by default they have the date and time of the conversation as their name.
@@ -282,6 +316,9 @@ and how you want it.
 
 ### Adding context
 
+So far we've seen a very simple example, but real-world problems are more complex.
+We deal with this by expanding the context section.
+
 Here's a simple example where some more context is being provided:
 
 ```metaphor
@@ -327,6 +364,65 @@ One thing to note is the AI understands all of these things but it also understa
 achieve a working program.
 By being more precise, the Metaphor prompt helps make sure any resuling software follows in that specific form.
 
+### When to use context subsections
+
+Context subsections help organize information in a hierarchical structure.
+The form is not fixed, but here are some example of how you might want to use them.
+
+The more complex your task, the more valuable structured context subsections become.
+
+The text inside the square brackets indicates the sort of detail you might include
+
+#### Categorizing information
+
+Group related information under descriptive headings:
+
+```metaphor
+    Context: User requirements
+        [User requirement details]
+
+    Context: Technical constraints
+        [Technical constraint details]
+```
+
+#### Establishing priorities
+
+Structure information from most to least important:
+
+```metaphor
+    Context: Must-have features
+        [Critical feature details]
+
+    Context: Nice-to-have features
+        [Optional feature details]
+```
+
+#### Creating relationships
+
+Show how different pieces of information relate to each other:
+
+```metaphor
+    Context: Database structure
+        [Database overview]
+
+        Context: User table
+            [User table details]
+
+        Context: Product table
+            [Product table details]
+```
+
+#### Separating concerns
+
+Keep different aspects of the problem distinct:
+
+```metaphor
+    Context: Frontend requirements
+        [Frontend details]
+
+    Context: Backend requirements
+        [Backend details]
+```
 ### Comments
 
 Sometimes it's useful to make notes in a Metaphor prompt that won't be passed to the AI.
@@ -451,10 +547,108 @@ For example, the following statement will embed all the Python files in a folder
     Embed: src/m6rc/*.py
 ```
 
+### Good practices for embedded content
+
+When using the `Embed` keyword, you should keep these guidelines in mind:
+
+#### Size limitations
+
+While LLMs can process large amounts of text, they all have "token" limits.
+Tokens are the way LLMs break down your message.
+There's no easy way to predict how many tokens are used in a conversation, but in English a rough guide is that
+a token matches about 3/4 of a word, and each unit of punctuation is often a token too.
+
+LLM pricing is usually basedo on the numbers of tokens used, so the more tokens you use, the more expensive the
+prompt is.
+
+For best results:
+
+   - Prioritize the most relevant files
+   - Consider splitting very large files into smaller, focused components
+
+If you are using an AI to help with software development you will want to add all the details your AI needs to
+understand your code, but you should look to avoid supplying large files that aren't relevant to the problem you
+want to solve.
+
+#### Organization patterns
+
+Organizing embedded files into logical groupings can make things easier for an AI to understand:
+
+   - Group related files together in your prompt structure
+   - Provide context before embedding files (e.g. explain what they are for)
+   - Add commentary after embedded content to highlight key points
+
+For example, you might do something like this:
+
+```metaphor
+Context: Project codebase
+    The system consists of several key components:
+
+    Context: Core data structures
+        Here are the core data structures that define our domain model:
+        Embed: src/models/*.py
+
+        The User and Product classes are the most important to understand.
+
+    Context: API endpoints
+        These are the main API endpoints:
+        Embed: src/api/routes.py
+```
+
+#### When to avoid embedding
+
+Not all file types are currently supported.
+For now only human-readable text files can be embedded successfully.
+If you have a binary file then consider using a description instead.
+
+## Another example: a data analysis report
+
+Let's look at a different type of problem - creating a data analysis report.
+This demonstrates how Metaphor helps with a complex, structured task that would be difficult to achieve with a single
+ad-hoc prompt.
+
+```metaphor
+Role:
+    You are a data analyst specializing in business insights.
+
+Context:
+    I need to create a quarterly sales report for my company's management team.
+
+    Context: Report requirements
+        The report must include:
+
+        - Executive summary (1 paragraph)
+        - Sales trends for Q1 2025 compared to Q1 2024
+        - Top 5 performing products
+        - Regional breakdown of sales
+        - Recommendations for Q2 2025
+
+    Context: Data source
+        ```csv
+        region,product,q1_2024_sales,q1_2025_sales
+        North,Widget A,120000,145000
+        North,Widget B,85000,91000
+        South,Widget A,95000,102000
+        South,Widget B,110000,105000
+        East,Widget C,78000,92000
+        West,Widget C,65000,88000
+        ```
+
+Action:
+    Create a structured report outline with placeholders for the required sections.
+```
+
+With this Metaphor prompt, the AI knows exactly what role to play, has all the necessary context including the data,
+and has clear instructions for the specific task.
+You could then follow up with additional ad-hoc prompts to refine specific sections of the report.
+By structuring this using Metaphor, we've made it easy to change aspects of the prompt as the need arises.
+Maybe the sales data changes, perhaps you are asked for the output in a different format.
+Whatever the change, you can now update the Metaphor prompt to meet your needs.
+
 ## Including other Metaphor files
 
 The `Embed` keyword is a powerful way to add content to a `Context` block, but it really just attaches files to
-the prompt.
+the prompt sent to the AI.
 It doesn't allow for extending Metaphor descriptions.
 
 There are many reasons you might want to do this, but here are a few:
