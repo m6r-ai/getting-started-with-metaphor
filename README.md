@@ -27,6 +27,8 @@ The Metaphor language is easy to learn.
 It has only a few keywords and takes only a few minutes to get started.
 This guide will show you how.
 
+You can find out more about Metaphor at [https://m6r.ai/metaphor](https://m6r.ai/metaphor).
+
 ## Who is this for?
 
 Metaphor has many uses.
