@@ -845,3 +845,7 @@ or directories can also be added by the compiler.
 This is a "getting started" guide and that's more of an advance topic, but you can find out more about this
 in a blog post: [Introducing Metaphor commands](https://m6r.ai/blog/000011-Introducing-Metaphor-commands).
 
+## Join us on Discord
+
+Join us on [Discord](https://discord.gg/GZhJ7ZtgwN) and look for the Metaphor channel to get help or share your ideas.
+
