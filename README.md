@@ -1,6 +1,6 @@
 # Getting started with Metaphor
 
-Version 0.2 - 2025-05-01
+Version 0.3 - 2025-05-13
 
 ## Introduction
 
