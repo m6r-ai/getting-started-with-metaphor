@@ -1,6 +1,6 @@
 # Getting started with Metaphor
 
-Version 0.2 - 2025-05-01
+Version 0.3 - 2025-05-13
 
 ## Introduction
 
@@ -139,14 +139,18 @@ Once it's running for the first time you'll see something a little like this:
 
 ![start screen](img/start-screen.webp)
 
-If you go to the "Humbug" menu and select "Preferences" you will see a user settings page:
+If you go to the "Humbug" menu and select "Preferences" you will see a user settings page.  There are quite a lot of
+settings so this page scrolls up and down:
 
 ![API key settings](img/api-keys.webp)
 
-Copy your Google and/or Mistral (or any other) API keys into the appropriate lines and then click OK.
+Find the Google and/or Mistral (or any other) sections.
+For each one, enable the backend by selecting the checkbox and then copy your matching API keys into the appropriate lines.
+You don't need to put anything in the optional API URL setting as those are advanced options for using private LLMs.
+Once you're done, click OK.
 
-You'll want to check the API keys are working properly.  The easiest way to do this is to start a conversation, but
-Humbug needs you to do one thing first.
+You'll want to check the API keys are working properly.
+The easiest way to do this is to start a conversation, but Humbug needs you to do one thing first.
 
 ### Mindspaces
 
