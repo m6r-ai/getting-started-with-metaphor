@@ -11,7 +11,7 @@ It's even harder when you want to work with multiple AIs.
 
 Metaphor is a simple, open-source, prompt creation language that lets you create consistent, reusable prompts that
 work across a variety of AI platforms.
-It lets you capture the what you need your AI to understand so it has a clear idea what you want it to do, without
+It lets you capture what you need your AI to understand so it has a clear idea what you want it to do, without
 needing to guess (hallucinate) any details.
 
 Metaphor solves three key problems that plague direct prompting: inconsistency across different AI models,
